@@ -1,6 +1,7 @@
 # redis_mutex
 
-TODO: Write a description here
+Somewhat [redis-mutex](https://github.com/kenn/redis-mutex) clone.
+The idea was taken from [the official SETNX doc](http://redis.io/commands/setnx).
 
 ## Installation
 
