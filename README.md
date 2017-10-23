@@ -1,4 +1,4 @@
-# redis_mutex
+# redis_mutex ![build status](https://travis-ci.org/Schniz/redis_mutex.cr.svg?branch=master)
 
 > Distributed mutex in Ruby using Redis.
 
