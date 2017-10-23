@@ -1,5 +1,5 @@
 name: redis_mutex
-version: 0.1.0
+version: 0.2.0
 
 authors:
   - Gal Schlezinger <galstar@spitfire.co.il>
@@ -7,10 +7,6 @@ authors:
 dependencies:
   redis:
     github: stefanwille/crystal-redis
-
-development_dependencies:
-  spec2:
-    github: waterlink/spec2.cr
 
 crystal: 0.23.1
 

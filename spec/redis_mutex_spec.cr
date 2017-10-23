@@ -1,6 +1,9 @@
 require "./spec_helper"
 require "../src/redis_mutex"
 
+class CustomException < Exception
+end
+
 describe RedisMutex do
   it "works" do
     50.times do
@@ -25,7 +28,19 @@ describe RedisMutex do
       values = [] of Int32
       2.times { values << channel.receive }
 
-      expect(values).to eq([1, 2])
+      values.should eq([1, 2])
+    end
+  end
+
+  it "clears token on exception" do
+    redis = Redis.new
+    redis.get("MY_KEY").should eq nil
+    expect_raises(CustomException) do
+      begin
+        RedisMutex::Lock.new("MY_KEY").run { raise CustomException.new }
+      ensure
+        redis.get("MY_KEY").should eq nil
+      end
     end
   end
 end

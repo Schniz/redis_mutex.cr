@@ -38,6 +38,7 @@ class RedisMutex::Lock
   def run(&block)
     try_to_lock
     block.call
+  ensure
     unlock
   end
 end
