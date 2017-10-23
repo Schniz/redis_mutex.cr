@@ -1,5 +1,7 @@
 # redis_mutex
 
+> Distributed mutex in Ruby using Redis.
+
 Somewhat [redis-mutex](https://github.com/kenn/redis-mutex) clone.
 The idea was taken from [the official SETNX doc](http://redis.io/commands/setnx).
 
